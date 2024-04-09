@@ -1,0 +1,21 @@
+# this is the main cde for the bot project
+
+
+from api.oanda_api import OandaApi
+import sys
+sys.path.append('C/Users/Amaechi/FIles/Studies/FX_botsystem')
+from infrastructure.instrument_collection import instrumentCollection
+from simulation.ma_cross import run_ma_sim
+from dateutil import parser
+from infrastructure.collect_data import run_collection
+
+
+if __name__ == '__main__':
+     api = OandaApi()    
+     instrumentCollection.LoadInstruments('./data')
+     run_collection(instrumentCollection, api)
+     
+     
+
+
+                    
